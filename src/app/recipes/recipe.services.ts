@@ -10,21 +10,27 @@ export class recipeService{
 
 recipeChanged = new Subject<Recipe[]>;
 
-  private recipes: Recipe[] = [
-    new Recipe('Food Meat',
-               'This is a test recipe',
-              'https://cdn.pixabay.com/photo/2016/06/15/19/09/food-1459693_960_720.jpg',
-               [new Ingredient('Meat',1),
-               new Ingredient('Bread', 2)
-               ]),
+  // private recipes: Recipe[] = [
+  //   new Recipe('Food Meat',
+  //              'This is a test recipe',
+  //             'https://cdn.pixabay.com/photo/2016/06/15/19/09/food-1459693_960_720.jpg',
+  //              [new Ingredient('Meat',1),
+  //              new Ingredient('Bread', 2)
+  //              ]),
 
-    new Recipe('Burger',
-               'This is a test recipe',
-               'https://cdn.pixabay.com/photo/2017/01/13/03/02/burgers-1976198_1280.jpg',
-               [new Ingredient('Bread', 1),
-                new Ingredient('Meat',2),
-                new Ingredient('Salad',4)])
-  ];
+  //   new Recipe('Burger',
+  //              'This is a test recipe',
+  //              'https://cdn.pixabay.com/photo/2017/01/13/03/02/burgers-1976198_1280.jpg',
+  //              [new Ingredient('Bread', 1),
+  //               new Ingredient('Meat',2),
+  //               new Ingredient('Salad',4)])
+  // ];
+
+  private recipes: Recipe[] = [];
+  setRecipes(recipes: Recipe[]){
+    this.recipes = recipes;
+    this.recipeChanged.next(this.recipes.slice());
+  }
 
 
   getRecipes(){
