@@ -4,7 +4,6 @@ import { NgForm } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { ArgumentOutOfRangeError, Subscription } from 'rxjs';
 import { Ingredient } from 'src/app/shared/ingredients.model';
-import { shoppinglistService } from '../shoppinglist.service';
 
 import * as ShoppingListActions from '../store/shopping-list.action';
 import * as fromShoppingList from '../store/shopping-list.reducers';
@@ -23,8 +22,7 @@ editMode = false;
 
 editedIngredient: Ingredient;
 
-  constructor(private shoppinglistService: shoppinglistService,
-              private store: Store<fromShoppingList.AppState>) { }
+  constructor(private store: Store<fromShoppingList.AppState>) { }
 
   ngOnInit(): void {
 

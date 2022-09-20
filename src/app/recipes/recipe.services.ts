@@ -2,15 +2,13 @@ import { Injectable } from "@angular/core";
 import { Store } from "@ngrx/store";
 import { Subject } from "rxjs";
 import { Ingredient } from "../shared/ingredients.model";
-import { shoppinglistService } from "../shopping-list/shoppinglist.service";
 import * as ShoppingListActions from '../shopping-list/store/shopping-list.action';
 import * as fromShoppingList from '../shopping-list/store/shopping-list.reducers';
 import { Recipe } from "./recipe.model";
 
 @Injectable()
 export class recipeService{
-  constructor(private shoppinglistService: shoppinglistService,
-              private store: Store<fromShoppingList.AppState > ) {};
+  constructor(private store: Store<fromShoppingList.AppState > ) {};
 
 recipeChanged = new Subject<Recipe[]>;
 
