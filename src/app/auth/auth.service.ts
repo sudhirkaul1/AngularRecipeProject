@@ -23,7 +23,8 @@ export interface authResponseData{
 })
 export class authService{
 
-  user = new BehaviorSubject<User>(null);
+  // user = new BehaviorSubject<User>(null);
+
   private apiKey = 'AIzaSyCKnlCHWfDtGPPjItFGBB1ugnTWJt32JGw';
   private tokenExpirationTimer: any;
 
